@@ -1,0 +1,47 @@
+section {
+    padding: 50px;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-row-gap: 2.5rem;
+    place-items: center;
+    text-align: center;
+    margin-top: 40px;
+    /* let's see what happens */
+}
+
+.book-wrapper {
+    display: grid;
+    grid-template-rows: 2fr 0.25fr 0.25fr;
+    margin: 0 20px;
+}
+
+.book-cover-wrapper img {
+    width: 180px;
+    height: 275px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+}
+
+.book-title {
+    margin-top: 20px;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.credits {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media (min-width:1300px) {
+
+.book-container {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+}

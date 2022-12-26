@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Trajan';
+    src: url(/Font/Trajan-Pro-Bold.ttf) format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --white: #F1F1F1;
+    --gray: #9B9B9B;
+    --light-gray: #CFD2D7;
+    --yellow: #F6BD60;
+    --gold-crayola: #E4BC7F;
+    --green: #345457;
+    --bright-green: #326560;
+    --koffin-font:'Koffins', serif;
+    --trajan-font: 'Trajan', serif;
+}
+
+/* General styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+.brand-name {
+    color: var(--gray);
+    font-family: var(--trajan-font);
+    letter-spacing: 1.5px;
+    text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+}
+
+.brand-font {
+    color: var(--yellow);
+}
+
+h2 {
+    color: var(--bright-green);
+    font-family: var(--trajan-font);
+    font-size: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+}
+
+h4 {
+    text-transform: capitalize;
+}
+
+.book-title {
+    width: 100%;
+    height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.book-author {
+    text-transform: capitalize;
+}
+
+/*Navigation bar*/
+nav {
+    background: var(--green);
+    display: grid;
+    grid-template-columns: 1fr 4fr 0.75fr;
+    align-items: center;
+    padding: 8px 40px 8px 30px;
+}
+
+.header-logo-container {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+    align-items: center;
+}
+
+.list-container {
+    display: grid;
+    place-content: center;
+}
+
+.user-container {
+    display: grid;
+    justify-content: end;
+}
+
+.header-brand-name {
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.header-brand-font {
+    margin-left: 10px;
+}
+
+.logo {
+    width: 55px;
+    margin-right: 10px;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 18px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--light-gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: var(--yellow);
+}
+
+.profile-icon {
+    color: var(--light-gray);
+}
+
+/* Footer */ 
+footer {
+    width: 100%;
+    background: var(--green);
+}
+
+.footer-logo-container {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.footer-logo-container img {
+    width: 160px;
+}
+
+.footer-brand-name {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    line-height: 1.15;
+}
+
+footer ul {
+    margin: 15px auto;
+    text-align: center;
+}
+
+footer ul li {
+    display: inline-block;
+    list-style-type: none;
+    top: 0;
+    left: 0;
+    padding: 15px 5px;
+    margin: 0 5px;
+    color: var(--light-gray);
+    font-size: 1.1rem;
+}
+
+.line-wrapper {
+    width: 100%;
+}
+
+.horizontal-line {
+    height: 1px;
+    width: 95%;
+    margin: 0 auto;
+    border-top: 1px solid var(--white);
+}
+
+.footer-end {
+    color: var(--light-gray);
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.footer-end a {
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+.footer-end a:hover {
+    color: var(--yellow);
+}
