@@ -1,3 +1,27 @@
+/* Visitor Nav */
+.visitor-nav {
+    display: flex;
+    color: var(--light-gray);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.visitor-nav span {
+    margin-left: 10px;
+}
+
+.visitor-nav a {
+    color: var(--light-gray);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.visitor-nav a:hover {
+    color: var(--yellow);
+}
+
 /* Hero Banner */
 .hero-banner img {
     width: 100%;
@@ -6,8 +30,7 @@
 
 /* Promoted books section */
 .book-container {
-    margin-top: 2.25rem;
-    margin-bottom: 2rem;
+    margin: 2.25rem auto;
 }
 
 .promo-books-container {
@@ -39,15 +62,45 @@
 }
 
 /* Promo Banner */
-.promo-banner {
+.promo-container {
+    position: relative;
+}
+
+.promo-banner img {
     width: 100%;
-    height: 300px;
-    background: var(--gold-crayola);
+    height: 65vh;
+}
+
+.click-btn {
+    position: absolute;
+    top: 68%;
+    left: 60%;
+}
+
+.click-me {
+    background-color: black;
+    padding: 8px 1.8rem;
+    border: none;
+}
+
+.click-me a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* Visitor button */
+.click-btn-visitor {
+    position: absolute;
+    top: 68%;
+    left: 58%;
 }
 
 /* Events & Promotions */
 .ep-container {
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     margin-bottom: 4rem;
 }
 
@@ -62,7 +115,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 4rem;
-    place-items: center;
+    justify-items: center;
+    justify-content: center;
     padding: 20px 2.5rem;
     margin: 20px 8rem;
 }

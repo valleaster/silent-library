@@ -11,14 +11,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-           $('#header').load("header-member.html");
            $('#footer').load("footer.html");
         });
     </script>
 </head>
 <body>
     <header>
-        <div id="header"></div>
+        <nav>
+            <div class="header-logo-container">
+                <a href="#"><img src="../Images/Banners&Logo/header-logo.png" alt="logo" class="logo"></a>
+                <div class="header-brand-name brand-name">
+                    <p>Silent</p>
+                    <p class="brand-font header-brand-font">Library</p>
+                </div>
+            </div>
+            <div class="list-container">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="user-container">
+                <div class="visitor-nav">
+                    <p>Sign in <span>|</span></p>
+                    <p><a href="#">Register</a></p>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="hero-banner">
@@ -79,9 +100,9 @@
             <div class="promo-banner">
                 <img src="../Images/Banners&Logo/promo-banner.png" alt="">
             </div>
-            <div class="click-btn">
+            <div class="click-btn-visitor">
                 <button class="click-me" type="button" value="button">
-                    <a href="../Pages/books.html">Read Now</a>
+                    <a href="#">sign up now</a>
                 </button>
             </div>
         </section>
