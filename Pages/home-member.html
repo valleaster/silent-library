@@ -12,6 +12,8 @@
     <script>
         $(document).ready(function(){
            $('#header').load("header-member.html");
+           $('#featured').load("featured.html");
+           $('#events').load("events.html");
            $('#footer').load("footer.html");
         });
     </script></head>
@@ -20,113 +22,22 @@
         <div id="header"></div>
     </header>
     <main>
+        <!-- ========== Hero banner section ========== -->
         <div class="hero-banner">
-            <img src="../Images/Banners&Logo/hero-banner.png" alt="library">
+            <div class="hero-promo">
+                <h1>Unlock a world of knowledge</h1>
+                <p>Expand your library with great books you love using our library card</p>
+                <button type="button"><a href="">read now</a></button>
+            </div>
+            <img src="../Images/Banners&Logo/hero-banner-img1.png" alt="library">
         </div>
-        <!-- ========== Featured Books Section ========== -->
-        <section class="book-container">
-            <h2>Popular books</h2>
-            <div class="promo-books-container">
-                <article class="promo-books">
-                    <div class="book-cover-wrapper">
-                        <img src="../Images/Books/book01.png" alt="">
-                    </div>
-                    <div class="book-title">
-                        <h4>The day we met</h4>
-                    </div>
-                    <div class="book-author">
-                        <p>Claudia Wilson</p>
-                    </div>
-                </article>
-                <article class="promo-books">
-                    <div class="book-cover-wrapper">
-                        <img src="../Images/Books/book02.png" alt="">
-                    </div>
-                    <div class="book-title">
-                        <h4>do things at your own pace</h4>
-                    </div>
-                    <div class="book-author">
-                        <p>seo jin ae</p>
-                    </div>
-                </article>
-                <article class="promo-books">
-                    <div class="book-cover-wrapper">
-                        <img src="../Images/Books/book03.png" alt="">
-                    </div>
-                     <div class="book-title truncated">
-                        <h4>Making things happen: pursuing the creative life without quiting your day job</h4>
-                    </div>
-                    <div class="book-author">
-                        <p>elizabeth murphy</p>
-                    </div>
-                </article>
-                <article class="promo-books">
-                    <div class="book-cover-wrapper">
-                        <img src="../Images/Books/book04.png" alt="">
-                    </div>
-                    <div class="book-title">
-                        <h4>dinosaurs zoo</h4>
-                    </div>
-                    <div class="book-author">
-                        <p>lara peters</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <!-- ========== Promo banner ========== -->
-        <section class="promo-container">
-            <div class="promo-banner">
-                <img src="../Images/Banners&Logo/promo-banner.png" alt="">
-            </div>
-            <div class="click-btn">
-                <button class="click-me" type="button" value="button">
-                    <a href="../Pages/books.html">Read Now</a>
-                </button>
-            </div>
-        </section>
-        <!-- ========== Events and Promotion Section ========== -->
-        <section class="ep-container">
-            <h2>Events & Promotions</h2>
-            <div class="event-container">
-                <article class="event-card">
-                    <div class="event-ribbon">
-                        <p>Ongoing</p>
-                    </div>
-                    <div class="event-img">
-                        <img src="../Images/Events/1.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Donation Drive</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, architecto doloribus. Necessitatibus cumque perspiciatis facilis.</p>
-                    </div>
-                </article>
-                <article class="event-card">
-                    <div class="event-ribbon">
-                        <p>Upcoming</p>
-                    </div>
-                    <div class="event-img">
-                        <img src="../Images/Events/3.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Color Fun Run</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, architecto doloribus. Necessitatibus cumque perspiciatis facilis.</p>
-                    </div>
-                </article>
-                <article class="event-card">
-                    <div class="event-ribbon">
-                        <p>Upcoming</p>
-                    </div>
-                    <div class="event-img">
-                        <img src="../Images/Events/2.png" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h3>Book Chat & Coffee</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi atque dicta eaque libero laudantium repellendus.</p>
-                    </div>
-                </article>
-            </div>
-             <p>For further details or enquiries regarding these events and promotions, kindly reach out to us.</p>
-        </section>
+
+        <!-- ========== Featured books section ========== -->
+        <section id="featured" class="book-container"></section>
+
+        <!-- ========== Events and promotion section ========== -->
+        <section id="events" class="ep-container"></section>
+
     </main>
     <footer>
         <div id="footer"></div>

@@ -23,25 +23,65 @@
 }
 
 /* Hero Banner */
+.hero-banner {
+    background: #c9c9c9;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    place-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.25rem;
+    text-transform: uppercase;
+}
+
+button {
+    background: none;
+    text-transform: uppercase;
+    margin-top: 15px;
+    padding: 8px 25px;
+    border: 1.5px solid var(--green);
+}
+
+button a {
+    text-decoration: none;
+    color: var(--green);
+}
+
+button:hover {
+    background: var(--green);
+    cursor: pointer;
+}
+
+button:hover a {
+    color: var(--light-gray);
+}
+
 .hero-banner img {
     width: 100%;
     height: 70vh;
 }
 
+/* General heading */
+.home-heading {
+    /* font-size: 1.75rem; */
+}
+
 /* Promoted books section */
 .book-container {
-    margin: 2.25rem auto;
+    margin-top: 2.5rem;
 }
 
 .promo-books-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 30px;
-    justify-items: center;
+    justify-content: start;
     align-items: center;
     text-align: center;
-    margin: 0 10vw;
-    padding: 35px 30px 10px 30px;
+    margin: 0 20px;
+    padding: 35px 20px 10px 20px;
 }
 
 .promo-books {
@@ -50,10 +90,10 @@
 }
 
 .book-cover-wrapper img {
-    width: 180px;
-    height: 275px;
+    width: 160px;
+    height: 245px;
     margin-bottom: 15px;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
 }
 
 .book-author {
@@ -61,51 +101,14 @@
     font-size: 0.9rem;
 }
 
-/* Promo Banner */
-.promo-container {
-    position: relative;
-}
-
-.promo-banner img {
-    width: 100%;
-    height: 65vh;
-}
-
-.click-btn {
-    position: absolute;
-    top: 68%;
-    left: 58%;
-}
-
-.click-me {
-    background-color: black;
-    padding: 8px 1.8rem;
-    border: none;
-}
-
-.click-me a {
-    color: var(--white);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    font-weight: 500;
-}
-
-/* Visitor button */
-.click-btn-visitor {
-    position: absolute;
-    top: 68%;
-    left: 58%;
-}
-
 /* Events & Promotions */
 .ep-container {
-    margin-top: 3rem;
-    margin-bottom: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .ep-container > p {
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 1.15rem;
     text-align: center;
 }
@@ -114,29 +117,29 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 4rem;
+    column-gap: 2rem;
     justify-items: center;
     justify-content: center;
-    padding: 20px 2.5rem;
-    margin: 20px 8rem;
+    padding: 20px;
+    margin: 20px;
 }
 
 .event-ribbon {
     position: absolute;
     background: var(--yellow);
     padding: 5px 10px;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.15);
 }
 
 .event-card {
-    width: 300px;
     background: white;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    box-shadow: 0 0rem 1rem rgba(0,0,0,0.1);
 }
 
 .event-img img {
-    width: 300px;
+    width: 100%;
 }
 
 .card-body {

@@ -1,9 +1,6 @@
-@font-face {
-    font-family: 'Trajan';
-    src: url(/Font/Trajan-Pro-Bold.ttf) format('truetype');
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
 
 :root {
     --white: #F1F1F1;
@@ -13,8 +10,7 @@
     --gold-crayola: #E4BC7F;
     --green: #345457;
     --bright-green: #326560;
-    --koffin-font:'Koffins', serif;
-    --trajan-font: 'Trajan', serif;
+    --brand-font: 'Philosopher', sans-serif;
 }
 
 /* General styling */
@@ -31,9 +27,9 @@ body {
 
 .brand-name {
     color: var(--gray);
-    font-family: var(--trajan-font);
-    letter-spacing: 1.5px;
-    text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+    /* font-family: var(--mont-font); */
+    font-family: var(--brand-font);
+    text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
 }
 
 .brand-font {
@@ -42,16 +38,12 @@ body {
 
 h2 {
     color: var(--bright-green);
-    font-family: var(--trajan-font);
+    font-family: var(--brand-font);
     font-size: 2rem;
+    letter-spacing: 0.5px;
     text-align: center;
-    text-transform: capitalize;
-    text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
-}
-
-h3 {
-    font-weight: 600;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
 }
 
 h4 {
@@ -110,7 +102,7 @@ nav {
 
 .logo {
     width: 55px;
-    margin-right: 10px;
+    margin-right: 7px;
 }
 
 nav ul li {
