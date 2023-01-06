@@ -151,7 +151,7 @@ footer {
 }
 
 footer ul {
-    margin: 15px auto;
+    margin: 8px auto;
     text-align: center;
 }
 
@@ -160,10 +160,14 @@ footer ul li {
     list-style-type: none;
     top: 0;
     left: 0;
-    padding: 15px 5px;
+    padding: 12px 5px;
     margin: 0 5px;
     color: var(--light-gray);
     font-size: 1.1rem;
+}
+
+footer ul li:first-of-type {
+    margin-left: 0;
 }
 
 .line-wrapper {

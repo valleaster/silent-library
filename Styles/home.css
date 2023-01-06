@@ -113,6 +113,11 @@ button:hover a {
     text-align: center;
 }
 
+.ep-container a {
+    color: var(--bright-green);
+    font-weight: 500;
+}
+
 .event-container {
     position: relative;
     display: grid;
