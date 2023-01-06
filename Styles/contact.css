@@ -9,7 +9,7 @@ h3 {
 /* Grid styling */
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 3.5fr;
+    grid-template-columns: 1fr 3fr;
     grid-gap: 1.5rem;
 }
 
@@ -33,11 +33,24 @@ h3 {
 
 /* Contact details */
 .contact-details {
-    padding: 10px;
+    padding: 10px 8px;
 }
 
 article {
     margin-bottom: 20px;
+}
+
+td {
+    font-size: 0.95rem;
+    vertical-align: top;
+}
+
+tr td:first-child {
+    width: 38%;
+}
+
+tr td:last-child {
+    padding-left: 10px;
 }
 
 .social ul {
@@ -55,7 +68,7 @@ article {
 }
 
 img {
-    width: 40px;
+    width: 30px;
 }
 
 /* Form */
@@ -63,7 +76,7 @@ img {
     position: absolute;
     content: "";
     width: 1px;
-    height: 105%;
+    height: 100%;
     top: 0;
     left: -10px;
     background: var(--light-gray);
@@ -71,7 +84,7 @@ img {
 
 .enquiry-form {
     position: relative;
-    padding: 0 30px;
+    padding: 0 25px;
 }
 
 .enquiry-form h3 {
@@ -83,19 +96,22 @@ img {
     position: relative;
     display: block;
     width: 100%;
-    padding: 8px 10px;
+    padding: 10px 20px;
     margin: 8px 0;
     border: none;
     font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
+    border-bottom: 1.5px solid white;
 }
 
 .field:focus {
     outline: none;
+    border-bottom: 1.5px solid var(--yellow);
+    transition: 0.25s all ease-in;
 }
 
 #message {
-    min-height: 175px;
+    min-height: 250px;
 }
 
 .btn {
@@ -105,7 +121,11 @@ img {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--green);
-    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn:hover {

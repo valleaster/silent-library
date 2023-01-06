@@ -5,15 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sitemap | Silent Library</title>
+    <!-- External css links -->
     <link rel="stylesheet" href="../Styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-           $('#header').load("header-admin.html");
-           $('#footer').load("footer.html");
-        });
-    </script>
+    <!-- Internal css styling -->
     <style>
         section {
             margin: 50px 10vw;
@@ -23,18 +18,18 @@
             margin-top: 20px;
         }
 
-        li {
+        .sitemap-container li {
             list-style: none;
             font-size: 1.6rem;
             margin: 10px 0;
         }
 
-        a {
+        .sitemap-container a {
             text-decoration: none;
             color: var(--green);
         }
 
-        a:hover {
+        .sitemap-container a:hover {
             color: var(--yellow);
         }
 
@@ -44,6 +39,14 @@
             font-size: 1.3rem;
         }
     </style>
+    <!-- jquery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $('#header').load("header-admin.html");
+           $('#footer').load("footer.html");
+        });
+    </script>
 </head>
 <body>
     <header>
