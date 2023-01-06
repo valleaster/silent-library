@@ -10,17 +10,74 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-           $('#header').load("header-member.html");
+           $('#header').load("header-admin.html");
            $('#footer').load("footer.html");
         });
     </script>
+    <style>
+        section {
+            margin: 50px 10vw;
+        }
+
+        .sitemap-container {
+            margin-top: 20px;
+        }
+
+        li {
+            list-style: none;
+            font-size: 1.6rem;
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--green);
+        }
+
+        a:hover {
+            color: var(--yellow);
+        }
+
+        .nested-list li {
+            list-style: disc;
+            margin: 0 50px 0;
+            font-size: 1.3rem;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div id="header"></div>
     </header>
     <main>
-        <section></section>
+        <section>
+            <h2>Sitemap</h2>
+            <div class="sitemap-container">
+                <ul>
+                    <li><a href="../Pages/books.html">Books</a></li>
+                    <li><a href="../Pages/borrower-directory.html">Borrower Directory</a></li>
+                    <li><a href="../Pages/about.html">About</a>
+                        <ul class="nested-list">
+                            <li><a href="../Pages/about.html">Vision</a></li>
+                            <li><a href="../Pages/about.html">History</a></li>
+                            <li><a href="../Pages/about.html">Trusted Partners</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../Pages/contact.html">Contact</a>
+                        <ul class="nested-list">
+                            <li><a href="../Pages/contact.html">Location</a></li>
+                            <li><a href="../Pages/contact.html">Address</a></li>
+                            <li><a href="../Pages/contact.html">Operating Hours</a></li>
+                            <li><a href="../Pages/contact.html">Contact No.</a></li>
+                            <li><a href="../Pages/contact.html">Email</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../Pages/books.html">Register</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="../Pages/privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </section>
     </main>
     <footer>
         <div id="footer"></div>
