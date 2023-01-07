@@ -4,7 +4,7 @@ section {
 
 .book-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 2.5rem;
     place-items: center;
     text-align: center;
@@ -19,8 +19,8 @@ section {
 }
 
 .book-cover-wrapper img {
-    width: 180px;
-    height: 275px;
+    width: 145px;
+    height: 225px;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
 }
 
@@ -41,7 +41,7 @@ section {
 @media (min-width:1300px) {
 
 .book-container {
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
 }
 
 }
