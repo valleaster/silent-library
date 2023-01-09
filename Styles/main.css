@@ -26,13 +26,16 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.brand-name {
+.brand-name, 
+.brand-name a {
     color: var(--gray);
     font-family: var(--brand-font);
+    text-decoration: none;
     text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
 }
 
-.brand-font {
+.brand-font,
+.brand-name span {
     color: var(--yellow);
 }
 
@@ -76,8 +79,10 @@ nav {
 }
 
 .header-logo-container {
+    cursor: pointer;
+    width: max-content;
     display: grid;
-    grid-template-columns: 0.5fr 2fr;
+    grid-template-columns: 0.5fr 1.25fr;
     align-items: center;
 }
 
@@ -92,17 +97,22 @@ nav {
 }
 
 .header-brand-name {
+    display: grid;
+    margin-left: 8px
+}
+
+.header-brand-name a {
     font-size: 1.05rem;
     line-height: 1;
 }
 
-.header-brand-font {
-    margin-left: 10px;
+.header-brand-name a:last-child {
+    color: var(--yellow);
+    margin-left: 8px;
 }
 
 .logo {
     width: 55px;
-    margin-right: 7px;
 }
 
 nav ul li {
@@ -134,9 +144,11 @@ footer {
 }
 
 .footer-logo-container {
+    cursor: pointer;
     display: grid;
     place-items: center;
-    justify-content: center;
+    width: max-content;
+    margin: auto;
     padding-top: 15px;
 }
 
@@ -148,6 +160,10 @@ footer {
     margin-top: 10px;
     font-size: 1.5rem;
     line-height: 1.15;
+}
+
+.footer-brand-name a:last-child {
+    color: var(--yellow);
 }
 
 footer ul {

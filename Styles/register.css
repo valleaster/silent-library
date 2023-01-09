@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+:root {
+    --white: #F1F1F1;
+    --gray: #9B9B9B;
+    --light-gray: #CFD2D7;
+    --yellow: #F6BD60;
+    --gold-crayola: #E4BC7F;
+    --green: #345457;
+    --light-green: #e8e9e7;
+    --bright-green: #326560;
+    --brand-font: 'Philosopher', sans-serif;
+}
+
+/* General styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--white);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+nav {
+    height: 65px;
+    background: rgb(246, 248, 245);
+    padding: 10px 30px 8px;
+}
+
+.logo-container {
+    cursor: pointer;
+    display: flex;
+    width: max-content;
+    align-items: center;
+}
+
+nav img {
+    width: 65px;
+    padding-bottom: 5px;
+    margin-right: 10px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+}
+
+.brand-name a {
+    color: var(--gray);
+    text-decoration: none;
+    font-family: var(--brand-font);
+    font-size: 1.35rem;
+    font-weight: bold;
+    text-shadow: 0 1rem 2.5rem rgba(0,0,0,0.5);
+}
+
+span {
+    margin-left: 5px;
+    color: var(--bright-green);
+}
+
+/* Background */
+main {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 65px);
+    background: url(../Images/Banners&Logo/library.jpg) no-repeat center;
+    background-size: cover;
+    /* filter: grayscale(30%); */
+    z-index: -1;
+}
+
+main::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--green);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+/* Form */
+.form-wrapper {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 350px;
+    margin: 10vh auto;
+}
+
+form {
+    position: relative;
+    padding: 35px;
+    background: var(--light-green);
+    border-radius: 10px;
+    z-index: 5;
+}
+
+label {
+    font-size: 0.8rem;
+}
+
+.field {
+    width: 100%;
+    background: rgba(155, 155, 155, 0.15);
+    border: 1px solid var(--bright-green);
+    border-radius: 2px;
+    font-size: 1rem;
+    padding: 8px 15px;
+    margin-bottom: 15px;
+}
+
+.field:focus {
+    background: rgba(255, 255, 255, 0.4);
+    outline: 1.5px solid var(--bright-green);
+}
+
+form > input:last-child {
+    cursor: pointer;
+    width: 100%;
+    color: white;
+    background: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 2px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Media query */
+@media (min-width:1300px) {
+    .form-wrapper {
+        width: 420px;
+        margin: 23vh auto;
+    }
+}

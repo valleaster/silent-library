@@ -119,10 +119,6 @@ section p {
     width: 75%;
 }
 
-.partner-grid img:nth-child(11) {
-    filter: grayscale(500%);
-}
-
 /* Media queries */
 @media (min-width:1300px) {
     .grid-container {
