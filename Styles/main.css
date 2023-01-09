@@ -9,6 +9,7 @@
     --yellow: #F6BD60;
     --gold-crayola: #E4BC7F;
     --green: #345457;
+    --light-green: #e8e9e7;
     --bright-green: #326560;
     --brand-font: 'Philosopher', sans-serif;
 }
@@ -27,7 +28,6 @@ body {
 
 .brand-name {
     color: var(--gray);
-    /* font-family: var(--mont-font); */
     font-family: var(--brand-font);
     text-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
 }
