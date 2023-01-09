@@ -1,3 +1,4 @@
+/* General styling */
 section > h2 {
     margin-top: 50px;
 }
@@ -10,6 +11,18 @@ section > h2 {
     margin: 0 50px;
 }
 
+h1 {
+    color: var(--bright-green);
+    font-size: 2.5rem;
+}
+
+h3 {
+    color: var(--bright-green);
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    padding: 8px;
+}
+
 h5 {
     color: #475066;
     font-size: 0.95rem;
@@ -18,15 +31,15 @@ h5 {
     letter-spacing: 3px;
 }
 
-h1 {
-    color: var(--bright-green);
-    font-size: 2.5rem;
-}
-
 section p {
     line-height: 2;
 }
 
+.bg-container {
+    background: var(--light-green);
+}
+
+/* Vision */
 .vision p {
     margin-top: 15px;
 }
@@ -41,10 +54,7 @@ section p {
     place-items: center;
 }
 
-.bg-container {
-    background: var(--light-green);
-}
-
+/* Mission */
 .mission div:first-child {
     grid-column: span 2;
 }
@@ -61,6 +71,7 @@ section p {
     border-bottom: 1px solid var(--gray);
 }
 
+/* Number data */
 .number-data {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -73,13 +84,7 @@ section p {
     font-size: 3rem;
 }
 
-h3 {
-    color: var(--bright-green);
-    font-size: 1.6rem;
-    text-transform: capitalize;
-    padding: 8px;
-}
-
+/* History */
 .history, 
 .partners {
     padding: 50px 120px;
@@ -91,6 +96,7 @@ h3 {
     margin: 35px;
 }
 
+/* Trusted partners */
 .partners {
     background: var(--light-green);
 }
@@ -109,7 +115,7 @@ h3 {
     opacity: 0.75;
 }
 
-.partner-grid img:nth-child(5) {
+.partner-grid img:nth-child(8) {
     width: 75%;
 }
 
@@ -117,6 +123,7 @@ h3 {
     filter: grayscale(500%);
 }
 
+/* Media queries */
 @media (min-width:1300px) {
     .grid-container {
         margin: 0 300px;
