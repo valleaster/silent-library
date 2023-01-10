@@ -26,6 +26,14 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+h3 {
+    color: var(--bright-green);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 5px auto 20px;
+}
+
 /* Header */
 nav {
     height: 65px;
@@ -75,7 +83,6 @@ main {
     height: calc(100vh - 65px);
     background: url(../Images/Banners&Logo/library.jpg) no-repeat center;
     background-size: cover;
-    /* filter: grayscale(30%); */
     z-index: -1;
 }
 
@@ -92,22 +99,26 @@ main::before {
 /* Form */
 .form-wrapper {
     position: relative;
+    width: 350px;
     display: grid;
     place-items: center;
-    width: 350px;
+    background: var(--light-green);
+    border-radius: 8px;
+    padding: 25px;
+    z-index: 4;
+}
+
+.sign-up {
     margin: 10vh auto;
+}
+
+.sign-in {
+    margin: 20vh auto;
 }
 
 form {
     position: relative;
-    padding: 35px;
-    background: var(--light-green);
-    border-radius: 10px;
     z-index: 5;
-}
-
-label {
-    font-size: 0.8rem;
 }
 
 .field {
@@ -116,8 +127,8 @@ label {
     border: 1px solid var(--bright-green);
     border-radius: 2px;
     font-size: 1rem;
-    padding: 8px 15px;
-    margin-bottom: 15px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
 }
 
 .field:focus {
@@ -135,13 +146,45 @@ form > input:last-child {
     font-weight: 600;
     letter-spacing: 1px;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
+    transition: 0.2s all ease;
+}
+
+form > input:last-child:hover {
+    background: var(--yellow);
+    border: 1px solid var(--yellow);
+    transform: scale(1.02);
+}
+
+/* Login */
+.login {
+    display: flex;
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.login a {
+    color: var(--bright-green);
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.login a:hover {
+    color: var(--yellow);
 }
 
 /* Media query */
 @media (min-width:1300px) {
     .form-wrapper {
         width: 420px;
+    }
+
+    .sign-up {
         margin: 23vh auto;
+    }
+
+    .sign-in {
+        margin: 30vh auto;
     }
 }
