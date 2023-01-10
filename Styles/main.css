@@ -26,6 +26,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Font styling */
 .brand-name, 
 .brand-name a {
     color: var(--gray);

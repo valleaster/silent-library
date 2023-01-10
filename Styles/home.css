@@ -63,11 +63,6 @@ button:hover a {
     height: 70vh;
 }
 
-/* General heading */
-.home-heading {
-    /* font-size: 1.75rem; */
-}
-
 /* Promoted books section */
 .book-container {
     margin-top: 2.5rem;
@@ -116,6 +111,10 @@ button:hover a {
 .ep-container a {
     color: var(--bright-green);
     font-weight: 500;
+}
+
+.ep-container a:hover {
+    color: var(--yellow);
 }
 
 .event-container {
