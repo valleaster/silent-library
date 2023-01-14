@@ -6,89 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Silent Library</title>
     <!-- External css links -->
+    <link rel="stylesheet" href="../Styles/styles.css">
     <link rel="stylesheet" href="../Styles/contact.css">
-    <link rel="stylesheet" href="../Styles/main.css">
+    <link rel="stylesheet" href="../Styles/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- jquery script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-           $('#header').load("header-member.html");
-           $('#footer').load("footer.html");
-        });
-    </script>
+    <script src="../Script/header.js"></script>
 </head>
 <body>
-    <header>
-        <div id="header"></div>
-    </header>
-    <main>
-        <section class="contact-container">
-            <!-- ========== Google maps ========== -->
-            <div class="map-container">
-                <div class="contact-heading">
-                    <h2>Contact Us</h2>
-                    <p>Come and drop by the Silent Library. While you're here, make sure to check out our extensive collection of books and other resources. Our friendly staffs are always available to assist you with any enquiries or needs. We look forward to seeing you at the library!</p>
+    <div id="page">
+        <header>
+            <div id="header"></div>
+        </header>
+        <main>
+            <section class="contact-container">
+                <!-- ========== Google maps ========== -->
+                <div class="map-container">
+                    <div class="contact-heading">
+                        <h2>Contact Us</h2>
+                        <p>Come and drop by the Silent Library. While you're here, make sure to check out our extensive collection of books and other resources. Our friendly staffs are always available to assist you with any enquiries or needs. We look forward to seeing you at the library!</p>
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.357280836848!2d99.71801012091387!3d6.240171597233737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b88a9cc4c8e57%3A0x6f6f679a15d03d2!2sPulo%20Singha%20Kintut!5e0!3m2!1sen!2smy!4v1672980270249!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.357280836848!2d99.71801012091387!3d6.240171597233737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b88a9cc4c8e57%3A0x6f6f679a15d03d2!2sPulo%20Singha%20Kintut!5e0!3m2!1sen!2smy!4v1672980270249!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- ========== Contact details ========== -->
+                <div class="contact-details">
+                    <article>
+                        <h3>Address</h3>
+                        <p>P.O.Box 316, Potato Hill Street,</p>
+                        <p>000000 Somewhere,</p>
+                        <p>Wherever</p>
+                    </article>
+                    <article>
+                        <h3>Operating Hours</h3>
+                        <table>
+                            <tr>
+                                <td>Mon - Sat</td>
+                                <td>09:00am - 10:00pm</td>
+                            </tr>
+                            <tr>
+                                <td>Sun & Public Holidays</td>
+                                <td>Closed</td>
+                            </tr>
+                        </table>
+                    </article>
+                    <article>
+                        <h3>Contact No.</h3>
+                        <p>01-23456789</p>
+                    </article>
+                    <article>
+                        <h3>email</h3>
+                        <p>silentlibrary@silentlibrary.com</p>
+                        <p>Or use our enquiry form on the right</p>
+                    </article>
+                    <div class="social">
+                        <h3>social</h3>
+                        <ul>
+                            <li><img src="../Images/Icons/facebook.png" alt="facebook"></li>
+                            <li><img src="../Images/Icons/instagram.png" alt="instagram"></li>
+                            <li><img src="../Images/Icons/twitter.png" alt="twitter"></li>
+                            <li><img src="../Images/Icons/tiktok.png" alt="tiktok"></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <!-- ========== Contact details ========== -->
-            <div class="contact-details">
-                <article>
-                    <h3>Address</h3>
-                    <p>P.O.Box 316, Potato Hill Street,</p>
-                    <p>000000 Somewhere,</p>
-                    <p>Wherever</p>
-                </article>
-                <article>
-                    <h3>Operating Hours</h3>
-                    <table>
-                        <tr>
-                            <td>Mon - Sat</td>
-                            <td>09:00am - 10:00pm</td>
-                        </tr>
-                        <tr>
-                            <td>Sun & Public Holidays</td>
-                            <td>Closed</td>
-                        </tr>
-                    </table>
-                </article>
-                <article>
-                    <h3>Contact No.</h3>
-                    <p>01-23456789</p>
-                </article>
-                <article>
-                    <h3>email</h3>
-                    <p>silentlibrary@silentlibrary.com</p>
-                    <p>Or use our enquiry form on the right</p>
-                </article>
-                <div class="social">
-                    <h3>social</h3>
-                    <ul>
-                        <li><img src="../Images/Icons/facebook.png" alt="facebook"></li>
-                        <li><img src="../Images/Icons/instagram.png" alt="instagram"></li>
-                        <li><img src="../Images/Icons/twitter.png" alt="twitter"></li>
-                        <li><img src="../Images/Icons/tiktok.png" alt="tiktok"></li>
-                    </ul>
+                <!-- ========== Enquiry form ========== -->
+                <div class="enquiry-form">
+                    <h3>Write to us</h3>
+                    <form action="" id="form">
+                        <div>
+                            <input type="text" id="name" name="name" class="field" placeholder="Name">
+                            <div class="error-message"></div>
+                        </div>
+                        <div>
+                            <input type="text" id="email" name="email" class="field" placeholder="Email address">
+                            <div class="error-message"></div>
+                        </div>
+                        <div>
+                            <input type="text" id="subject" name="subject" class="field" placeholder="Subject">
+                            <div class="error-message"></div>
+                        </div>
+                        <div>
+                            <textarea name="message" id="message" class="field" placeholder="Message"></textarea>
+                            <div class="error-message"></div>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
                 </div>
+            </section>
+        </main>
+        <footer>
+            <div id="footer"></div>
+        </footer>
+    </div>
+    <div id="pop-up" class="contact">
+        <div class="container">
+            <div id="close" onclick="closePopup()">
+                <i class="fa-solid fa-xmark"></i>
             </div>
-            <!-- ========== Enquiry form ========== -->
-            <div class="enquiry-form">
-                <h3>Write to us</h3>
-                <form action="">
-                    <input type="text" id="name" name="name" class="field" placeholder="Name" required>
-                    <input type="email" id="email" name="email" class="field" placeholder="Email address" required>
-                    <input type="text" id="subject" name="subject" class="field" placeholder="Subject">
-                    <textarea name="message" id="message" class="field" placeholder="Message" required></textarea>
-                    <input type="submit" value="Submit" class="btn">
-                </form>
+            <div class="contact-img">
+                <img src="../Images/Banners&Logo/popup.png" alt="message received" >
+                <h5>Hold on tight, <span id="header-message"></span></h5>
+                <p>We have received your message and we will be in touch with you shortly.</p>
             </div>
-        </section>
-    </main>
-    <footer>
-        <div id="footer"></div>
-    </footer>
+        </div>
+    </div>
+    <script src="../Script/enquiry.js" type="text/javascript"></script>
+    <script src="../Script/popup.js" type="text/javascript" ></script>
 </body>
 </html>
