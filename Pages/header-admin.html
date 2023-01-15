@@ -1,21 +1,28 @@
 <nav>
     <div class="header-logo-container">
-        <a href="home-admin.html"><img src="/Images/Banners&Logo/header-logo.png" alt="logo" class="logo"></a>
+        <a href="home.html"><img src="/Images/Banners&Logo/header-logo.png" alt="logo" class="logo"></a>
         <div class="header-brand-name brand-name">
-            <a href="home-admin.html">Silent</a>
-            <a href="home-admin.html">Library</a>
+            <a href="home.html">Silent</a>
+            <a href="home.html">Library</a>
         </div>
     </div>
     <div class="list-container">
         <ul>
-            <li><a href="home-admin.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="books.html">Books</a></li>
-            <li><a href="borrower-directory.html">borrower directory</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
-    <div class="user-container">
-        <p class="profile-icon"><i class="fa-solid fa-user"></i></p>
+    <div class="user-container" id="profile">
+        <p id="username"></p>
+        <p class="profile-icon"><i class="fa-solid fa-caret-down"></i><i class="fa-solid fa-user"></i></p>
     </div>
 </nav>
+<div class="dropdown hide" id="dropdown-menu">
+    <ul>
+        <li class="separator">My Books</li>
+        <li class="separator" id="redirect">User Management</li>
+        <li id="logout">Logout</li>
+    </ul> 
+</div> 

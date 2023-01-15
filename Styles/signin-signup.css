@@ -26,14 +26,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-h3 {
-    color: var(--bright-green);
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 5px auto 20px;
-}
-
 /* Header */
 nav {
     height: 65px;
@@ -92,7 +84,7 @@ main::before {
     width: 100%;
     height: 100%;
     background-color: var(--green);
-    opacity: 0.2;
+    opacity: 0.15;
     z-index: 1;
 }
 
@@ -100,35 +92,52 @@ main::before {
 .form-wrapper {
     position: relative;
     width: 350px;
-    display: grid;
-    place-items: center;
     background: var(--light-green);
     border-radius: 8px;
-    padding: 25px;
+    padding: 40px;
     z-index: 4;
 }
 
 .sign-up {
-    margin: 10vh auto;
+    margin: 12vh auto;
 }
 
 .sign-in {
-    margin: 20vh auto;
+    margin: 18vh auto;
 }
 
 form {
-    position: relative;
     z-index: 5;
 }
 
+h3 {
+    color: var(--bright-green);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 20px;
+}
+
+/* Login heading container */
+.heading-container {
+    height: 80px;
+    display: grid;
+    grid-template-rows: 40px 40px;
+    /* align-items: top; */
+}
+
+.sign-in h3 {
+    margin: auto;
+}
+
+/* Input box */
 .field {
     width: 100%;
     background: rgba(155, 155, 155, 0.15);
     border: 1px solid var(--bright-green);
     border-radius: 2px;
-    font-size: 1rem;
     padding: 10px 15px;
-    margin-bottom: 12px;
+    outline: none;
 }
 
 .field:focus {
@@ -136,41 +145,66 @@ form {
     outline: 1.5px solid var(--bright-green);
 }
 
-form > input:last-child {
+button {
     cursor: pointer;
     width: 100%;
     color: white;
-    background: var(--green);
-    border: 1px solid var(--green);
+    background: var(--bright-green);
+    border: 2px solid var(--bright-green);
     border-radius: 2px;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 10px;
+    padding: 12px;
     margin-top: 5px;
     transition: 0.2s all ease;
 }
 
-form > input:last-child:hover {
+button:hover {
     background: var(--yellow);
-    border: 1px solid var(--yellow);
+    border: 2px solid var(--yellow);
     transform: scale(1.02);
 }
 
-/* Login */
-.login {
+/* Form validation style */
+.no-error {
+    margin-bottom: 8px;
+}
+
+.error {
+    border: none;
+    outline: 1.5px solid red;
+    background: #f8f6f6;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+}
+
+.sign-in .error-message {
+    font-size: small;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* Account */
+.account {
     display: flex;
     color: var(--gray);
     font-size: 0.9rem;
+    justify-content: center;
     margin-top: 15px;
 }
 
-.login a {
+.account a {
     color: var(--bright-green);
     text-decoration: none;
     margin-left: 5px;
 }
 
-.login a:hover {
+.account a:hover {
     color: var(--yellow);
 }
 

@@ -97,7 +97,6 @@ img {
     display: block;
     width: 100%;
     padding: 10px 20px;
-    margin: 8px 0;
     border: none;
     font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
@@ -114,7 +113,7 @@ img {
     min-height: 250px;
 }
 
-.btn {
+button {
     cursor: pointer;
     color: white;
     background: var(--green);
@@ -128,7 +127,23 @@ img {
     letter-spacing: 0.5px;
 }
 
-.btn:hover {
+button:hover {
     color: var(--green);
     background: transparent;
+}
+
+/* Form validation style */
+.no-error {
+    margin: 8px 0;
+}
+
+.error {
+    border: 1.5px solid red !important;
+    background: #f8f6f6;
+}
+
+.error-message {
+    color: red;
+    font-size: small;
+    margin-bottom: 8px;
 }
