@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silent Library | User Management</title>
+    <!-- External css links -->
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jquery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="../Script/common.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <main>
+        <section>
+            <div class="upper">
+                <h2>User Management</h2>
+                <form action="">
+                    <div class="input">
+                        <input type="text" name="name" id="form-name" class="no-error name-input" placeholder="Name" value="vall">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="email" id="form-email" class="no-error email-input" placeholder="Email" value="vall@vall.co">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="input">
+                        <select name="role" id="form-role" class="no-error select-input">
+                            <option value="user-role" class="disabled" disabled>User role</option>
+                            <option value="user" selected>User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" id="add-user">
+                        <i class="fa-solid fa-circle-plus"></i>Add User
+                    </button>
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+    <!-- Javascript link -->
+    <script src="../Script/user.js"></script>
+</body>
+</html>

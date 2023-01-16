@@ -4,18 +4,18 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const fields = [email, password];
 
-const userEmail = localStorage.getItem('email');
-const userPassword = localStorage.getItem('password');
-const userRole = localStorage.getItem('role');
+let registered = JSON.parse(localStorage.getItem('registered'));
 
 let hasError = false;
 let fieldEmpty = true;
 
+// Form submission logic
 form.addEventListener('submit', e => {
     e.preventDefault();
     hasError = false;
     validateForm();
     if (!hasError) {
+        getUserData(email.value);
         clearForm();
         window.location.href = '../Pages/home.html';
     } else{
@@ -25,7 +25,7 @@ form.addEventListener('submit', e => {
                 if (field.classList.contains('error')) {
                     field.classList.remove('error');
                     errorMessage.textContent = '';
-                }
+                };
             });
         });
     };
@@ -54,14 +54,14 @@ function validateForm() {
     }
 
     // Checking for user existence
-    if ((!fieldEmpty) && emailValue !== userEmail && passwordValue !== userPassword) {
+    if ((!fieldEmpty) && !registered.some(user => user.email === emailValue && user.password === passwordValue)) {
         showError('User does not exist');
-    } else if(emailValue === userEmail && passwordValue !== userPassword) {
+    } else if(registered.some(user => user.email === emailValue) && !registered.some(user => user.password === passwordValue)) {
         showError('Email or password incorrect');
-    } else if(emailValue !== userEmail && passwordValue === userPassword) {
+    } else if(!registered.some(user => user.email === emailValue) && registered.some(user => user.password === passwordValue)) {
         showError('Email or password incorrect');
     };
-}
+};
 
 // Clear form
 function clearForm() {
@@ -69,4 +69,13 @@ function clearForm() {
         input.value = '';
     });
 };
+
+// Storing session data
+function getUserData(mail) {
+    const user = registered.find(user => user.email === mail);
+    if(user) {
+        sessionStorage.setItem('name', user.name);
+        sessionStorage.setItem('role', user.role);
+    }
+}
 

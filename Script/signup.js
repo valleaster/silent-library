@@ -20,9 +20,7 @@ form.addEventListener('submit', e => {
     totalError = 0;
     validateForm();
     if (!hasError) {
-        // Storing user data
         storeData();
-        userRole(email.value);
         displayPopup(username);
         clearForm();
         hasError = false;
@@ -52,6 +50,28 @@ form.addEventListener('submit', e => {
         });
     };
 });
+
+// Setting default data
+if (localStorage.getItem('registered') === null) {
+    const testUsers = [
+        {name: 'yanfei', email: 'feifei@mail.com', password: '12345678', role: 'user'},
+        {name: 'lisa', email: 'lisaminci@silentlibrary.com', password: '12345678', role: 'admin'}
+    ];
+    localStorage.setItem('registered', JSON.stringify(testUsers));
+}
+
+// Data storage 
+function storeData() {
+    const newUser = {
+        'name' : username.value,
+        'email' : email.value,
+        'password': password.value,
+        'role': userRole(email.value)
+    };
+    const registered = JSON.parse(localStorage.getItem('registered'));
+    registered.push(newUser);
+    localStorage.setItem('registered', JSON.stringify(registered));
+};
 
 // Displaying error
 function showError (element, message) {
@@ -112,11 +132,9 @@ function isValidEmail(mail) {
 // Checking userRole
 function userRole(mail) {
     if(mail.endsWith('@silentlibrary.com')) {
-        localStorage.setItem('role', 'admin');
-        sessionStorage.setItem('role', 'admin');
+        return 'admin';
     } else {
-        localStorage.setItem('role', 'user');
-        sessionStorage.setItem('role', 'user');
+        return 'user';
     }
 };
 
@@ -129,10 +147,9 @@ function getMarginValue() {
     };
 };
 
-// Data storage 
-function storeData() {
-    store.forEach((data) => {
-        localStorage.setItem(data.name, data.value);
-        sessionStorage.setItem(data.name, data.value);
+// Clearing form input fields
+function clearForm() {
+    fields.forEach((input) => {
+        input.value = '';
     });
 };

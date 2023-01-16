@@ -1,37 +1,114 @@
 /* Hero Banner */
+.owl-carousel {
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    z-index: 5 !important;
+}
+
+.owl-prev, 
+.owl-next {
+    position: absolute;
+    width: 50px;
+    height: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white) !important;
+    background:none !important;
+    font-size: 65px !important;
+    font-weight: bolder !important;
+    transition: 0.2s all ease-in;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+    background: rgba(0,0,0,0.1) !important;
+}
+
+.owl-prev {
+    left: 1%;
+}
+
+.owl-next {
+    right: 1%;
+}
+
 .hero-banner {
     background: #c9c9c9;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.25fr 1fr;
     place-items: center;
     text-align: center;
 }
 
+.item {
+    height: 70vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.item-2 {
+    background-image: url(../Images/Banners&Logo/cr2.jpg);
+}
+
+.item-3 {
+    background-image: url(../Images/Banners&Logo/banner-3c.jpg);
+}
+
+.content {
+    height: 70vh;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.content-center {
+    text-align: center;
+    justify-items: center;
+}
+
+.content-right {
+    color: var(--white);
+    justify-content: left !important;
+    padding-left: 55vw;
+    padding-right: 5vw;
+}
+
 h1 {
-    font-size: 2.25rem;
+    font-size: 2.4rem;
     text-transform: uppercase;
 }
 
-button {
-    color: var(--green);
-    background: none;
+.content a {
+    text-decoration: none;
+}
+
+.item a,
+.item button {
+    min-width: 150px;
+    max-width: 225px;
+    color: var(--white);
+    background: var(--green);
+    justify-content: center;
+    font-size: 0.95rem;
+    text-align: center;
     text-transform: uppercase;
+    border: none;
     margin-top: 15px;
     padding: 8px 25px;
-    border: 1.5px solid var(--green);
 }
 
-button:hover {
-    background: var(--green);
+.item a:hover,
+.item button:hover {
     cursor: pointer;
-}
-
-button:hover {
-    color: var(--light-gray);
+    color: var(--green);
+    background: var(--yellow);
 }
 
 .hero-banner img {
-    width: 100%;
+    width: 50%;
     height: 70vh;
 }
 

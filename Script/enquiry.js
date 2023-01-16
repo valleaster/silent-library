@@ -2,7 +2,9 @@
 const form = document.getElementById('form');
 const username = document.getElementById('name');
 const email = document.getElementById('email');
+const subject = document.getElementById('subject');
 const message = document.getElementById('message');
+const all = [username, email, message, subject];
 const fields = [username, email, message];
 const headerMessage = document.getElementById('header-message');
 
@@ -15,20 +17,20 @@ form.addEventListener('submit', e => {
     if (!hasError) {
         displayPopup(username);
         clearForm();
-    } else {
-        // Removing error
-        fields.forEach((field) => {
-            field.addEventListener('input', () => {
-                const errorMessage = field.parentNode.querySelector('.error-message');
-        
-                if (field.classList.contains('error')) {
-                    field.classList.remove('error');
-                    field.classList.add('no-error');
-                    errorMessage.textContent = '';
-                };
-            });
+        sessionStorage.setItem('autoPopulate', 'false')
+    } 
+
+    fields.forEach((field) => {
+        field.addEventListener('input', () => {
+            const errorMessage = field.parentNode.querySelector('.error-message');
+    
+            if (field.classList.contains('error')) {
+                field.classList.remove('error');
+                field.classList.add('no-error');
+                errorMessage.textContent = '';
+            };
         });
-    };
+    });
 });
 
 // Displaying error
@@ -69,4 +71,11 @@ function validateForm() {
 function isValidEmail(mail) {
     var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return emailRegex.test(String(mail).toLowerCase());
+};
+
+// Clearing form
+function clearForm() {
+    all.forEach((input) => {
+        input.value = '';
+    });
 };
