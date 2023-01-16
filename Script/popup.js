@@ -14,10 +14,3 @@ function closePopup() {
     popup.classList.remove('active');
     page.classList.remove('blur');
 };
-
-// Form submission behavior
-function clearForm() {
-    fields.forEach((input) => {
-        input.value = '';
-    });
-};

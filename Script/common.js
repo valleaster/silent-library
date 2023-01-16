@@ -2,6 +2,7 @@ $(document).ready(function(){
     const userRole = sessionStorage.getItem('role');
     const userName = sessionStorage.getItem('name');
 
+    // Showing header based on user role
     if (userRole === 'admin') {
       $('#header').load("header-admin.html", onHeaderLoad);
     } else if (userRole === 'user') {
@@ -13,24 +14,26 @@ $(document).ready(function(){
       sessionStorage.setItem('role', 'visitor');
     }
 
-    //member header related UI stuff: called when header loaded
+    //Member headers dropdown menu
     function onHeaderLoad() {
 
       // Display username on profile
-      $('#username').html(userName);
+      $('#profile-name').html(userName);
 
       //Show dropdown when profile clicked
       $('#profile').click(() => {
           $('#dropdown-menu').toggleClass('hide');
       });
 
+      // Redirecting to user management page
       $('#redirect').click(() => {
-        window.location.href = '../Pages/user-management.html';
+          window.location.href = '../Pages/user.html';
       });
 
       //logout button clicked
       $('#logout').click(() => {
           sessionStorage.clear();
+          location.reload(true);
       });
     };
 
