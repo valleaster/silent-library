@@ -21,29 +21,32 @@
         <section>
             <div class="upper">
                 <h2>User Management</h2>
+                <div id="error-message">sad</div>
                 <form action="">
                     <div class="input">
-                        <input type="text" name="name" id="form-name" class="no-error name-input" placeholder="Name" value="vall">
-                        <div class="error-message"></div>
+                        <input type="text" name="name" id="name" class="name-input" placeholder="Name" value="someone">
                     </div>
                     <div class="input">
-                        <input type="text" name="email" id="form-email" class="no-error email-input" placeholder="Email" value="vall@vall.co">
-                        <div class="error-message"></div>
+                        <input type="text" name="email" id="email" class="email-input" placeholder="Email" value="something@random.co">
                     </div>
                     <div class="input">
-                        <select name="role" id="form-role" class="no-error select-input">
+                        <select name="role" id="role" class="select-input">
                             <option value="user-role" class="disabled" disabled>User role</option>
                             <option value="user" selected>User</option>
                             <option value="admin">Admin</option>
                         </select>
-                        <div class="error-message"></div>
                     </div>
-                    <button type="submit" id="add-user">
-                        <i class="fa-solid fa-circle-plus"></i>Add User
-                    </button>
+                    <div class="btn-container">
+                        <button type="submit" id="add">
+                            <i class="fa-solid fa-circle-plus"></i>Add User
+                        </button>
+                        <button type="submit" id="update">
+                            <i class="fa-solid fa-check"></i>Update
+                        </button>
+                    </div>
                 </form>
             </div>
-            <table>
+            <table id="table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -52,6 +55,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
+                <tbody></tbody>
             </table>
         </section>
     </main>

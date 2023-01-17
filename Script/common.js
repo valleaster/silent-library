@@ -1,6 +1,6 @@
 $(document).ready(function(){
     const userRole = sessionStorage.getItem('role');
-    const userName = sessionStorage.getItem('name');
+    const profileName = sessionStorage.getItem('name');
 
     // Showing header based on user role
     if (userRole === 'admin') {
@@ -18,7 +18,7 @@ $(document).ready(function(){
     function onHeaderLoad() {
 
       // Display username on profile
-      $('#profile-name').html(userName);
+      $('#profile-name').html(profileName);
 
       //Show dropdown when profile clicked
       $('#profile').click(() => {
