@@ -1,8 +1,6 @@
 section {
     min-height: 55vh;
     overflow: hidden;
-    display: grid;
-    grid-template-rows: 200px minmax(150px, auto);
     justify-content: center;
     margin: 50px;
 }
@@ -11,7 +9,7 @@ section {
 form {
     display: flex;
     justify-content: center;
-    margin: 45px auto 60px;
+    margin: 30px auto 60px;
 }
 
 form input,
@@ -27,11 +25,19 @@ form button {
 }
 
 form input {
-    min-width: 200px;
+    min-width: 300px;
 }
 
 form select {
-    min-width:150px;
+    min-width: 150px;
+}
+
+form button {
+    margin-right: 0;
+}
+
+.input {
+    margin-bottom: 0px;
 }
 
 input:focus, 
@@ -39,38 +45,58 @@ select:focus {
     outline: 1.5px solid var(--green);
 }
 
-button {
+.btn-container button {
     cursor: pointer;
-    min-width: 120px;
+    width: 125px;
     color: white;
-    background: var(--bright-green);
-    margin-right: 0;
+    font-size: 0.95rem;
+    justify-content: center;
+    padding: 10px;
     transition: 0.2s;
+}
+
+.btn-container button:hover {
+    transform: scale(1.01);
+}
+
+#add {
+    background: #198754;
+}
+
+#add:hover {
+    background: #157347;
+}
+
+#update {
+    display: none;
+    background: #0d6efd;
+}
+
+#update:hover {
+    background: #0b5ed7;
 }
 
 .fa-user-plus {
     font-size: 0.8rem;
 }
 
-button:hover {
-    background: var(--yellow);
-    transform: scale(1.02);
-}
-
 /* Table */
 table {
+    min-width: 950px;
+    max-width: 1000px;
+    justify-content: center;
     overflow: hidden;
     border-collapse: collapse;
     border-radius: 5px;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
-    margin-bottom: 100px;
+    margin: 0 auto 100px;
 }
 
 thead {
     max-width: 50px !important;
     color: var(--white);
     background: var(--bright-green);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 }
 
 th {
@@ -85,6 +111,14 @@ td:nth-child(3) {
     text-align: center;
 }
 
+th:nth-of-type(3) {
+    width: 20%;
+}
+
+th:last-of-type {
+    width: 20%;
+}
+
 tbody {
     background: white;
     margin-top: 20px;
@@ -96,7 +130,7 @@ tbody tr {
 
 td {
     height: 55px !important;
-    font-size: 1.02rem;
+    font-size: 1rem;
     padding: 0;
     padding: 5px 8px 5px 0;
 }
@@ -105,50 +139,14 @@ tr td:first-child {
     padding-left: 15px;
 }
 
-.table-data {
-    background: transparent;
-    font-size: 0.95rem;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
-}
-
-.table-data:focus {
-    outline: none;
-}
-
-.edit-mode {
-    background: #f4f4f4;
-}
-
-.long {
-    width: 180px;
-}
-
-.longer {
-    width: 210px;
-}
-
-.shorter {
-    min-width: 110px;
-}
-
 .capitalize {
     text-transform: capitalize;
 }
 
-.lowercase {
-    text-transform: lowercase;
-}
-
-.admin {
-    color: #93032E;
-    font-weight: 500;
-}
-
-.action ul {
+.action-btn {
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -194,19 +192,28 @@ tr td:first-child {
 }
 
 /* Form validation style */
-.no-error {
-    margin-bottom: 8px;
-}
-
 .error {
     border: none;
     outline: 1.5px solid red;
     background: #f8f6f6;
 }
 
-.error-message {
-    display: none;
+#error-message {
+    height: 20px;
+    display: flex;
+    visibility: hidden;
     color: red;
-    font-size: 0.8rem;
-    margin-bottom: 8px;
+    font-size: 0.85rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px auto 0;
+}
+
+/* Media queries */
+@media (min-width: 1300px) {
+    table {
+        min-width: 1200px;
+        max-width: 1500px;
+    }
 }
