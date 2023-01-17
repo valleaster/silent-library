@@ -93,6 +93,8 @@ h1 {
     background: var(--green);
     justify-content: center;
     font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     text-align: center;
     text-transform: uppercase;
     border: none;
