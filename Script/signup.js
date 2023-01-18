@@ -52,25 +52,27 @@ form.addEventListener('submit', e => {
 });
 
 // Setting default data
-if (localStorage.getItem('registered') === null) {
+if (localStorage.getItem('users') === null) {
     const testUsers = [
         {name: 'yanfei', email: 'feifei@mail.com', password: '12345678', role: 'user'},
         {name: 'lisa', email: 'lisaminci@silentlibrary.com', password: '12345678', role: 'admin'}
     ];
-    localStorage.setItem('registered', JSON.stringify(testUsers));
-}
+
+    localStorage.setItem('users', JSON.stringify(testUsers));
+};
 
 // Data storage 
 function storeData() {
     const newUser = {
-        'name' : username.value,
-        'email' : email.value,
+        'name' : username.value.toLowerCase(),
+        'email' : email.value.toLowerCase(),
         'password': password.value,
         'role': userRole(email.value)
     };
-    const registered = JSON.parse(localStorage.getItem('registered'));
+
+    const registered = JSON.parse(localStorage.getItem('users'));
     registered.push(newUser);
-    localStorage.setItem('registered', JSON.stringify(registered));
+    localStorage.setItem('users', JSON.stringify(registered));
 };
 
 // Displaying error
@@ -88,7 +90,7 @@ function showError (element, message) {
 // Form validation function
 function validateForm() {
     const usernameValue = username.value;
-    const emailValue = email.value;
+    const emailValue = email.value.toLowerCase();
     const passwordValue = password.value;
     const confirmPasswordValue = confirmPassword.value;
 
@@ -98,10 +100,14 @@ function validateForm() {
     };
 
     // Email error
+    const registeredUser = JSON.parse(localStorage.getItem('users'))
+
     if(emailValue === '') {
         showError(email, 'Email is required');
     } else if(!isValidEmail(emailValue)) {
         showError(email, 'Please enter a valid email');
+    } else if(registeredUser.some(user => user.email === emailValue)) {
+        showError(email, 'Email is already in use');
     };
 
     // Password error
@@ -117,7 +123,7 @@ function validateForm() {
     } else if(confirmPasswordValue === '' && passwordValue !== '') {
         showError(confirmPassword, 'Please confirm password');
     } else if((passwordValue.length < 8) && confirmPasswordValue === passwordValue){
-        showError(confirmPassword, 'Redo bruh')
+        showError(confirmPassword, 'Please enter a valid password')
     } else if(confirmPasswordValue !== passwordValue) {
         showError(confirmPassword, 'Password mismatch');
     };

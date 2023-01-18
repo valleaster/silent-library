@@ -4,7 +4,18 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const fields = [email, password];
 
-let registered = JSON.parse(localStorage.getItem('registered'));
+// Checking for data
+let users;
+if (localStorage.getItem('users') === null) {
+    const testUsers = [
+        {name: 'yanfei', email: 'feifei@mail.com', password: '12345678', role: 'user'},
+        {name: 'lisa', email: 'lisaminci@silentlibrary.com', password: '12345678', role: 'admin'}
+    ];
+
+    localStorage.setItem('users', JSON.stringify(testUsers));
+} else {
+    users = JSON.parse(localStorage.getItem('users'));
+};
 
 let hasError = false;
 let fieldEmpty = true;
@@ -54,11 +65,11 @@ function validateForm() {
     }
 
     // Checking for user existence
-    if ((!fieldEmpty) && !registered.some(user => user.email === emailValue && user.password === passwordValue)) {
+    if ((!fieldEmpty) && !users.some(user => user.email === emailValue && user.password === passwordValue)) {
         showError('User does not exist');
-    } else if(registered.some(user => user.email === emailValue) && !registered.some(user => user.password === passwordValue)) {
+    } else if(users.some(user => user.email === emailValue) && !users.some(user => user.password === passwordValue)) {
         showError('Email or password incorrect');
-    } else if(!registered.some(user => user.email === emailValue) && registered.some(user => user.password === passwordValue)) {
+    } else if(!users.some(user => user.email === emailValue) && users.some(user => user.password === passwordValue)) {
         showError('Email or password incorrect');
     };
 };
@@ -72,7 +83,7 @@ function clearForm() {
 
 // Storing session data
 function getUserData(mail) {
-    const user = registered.find(user => user.email === mail);
+    const user = users.find(user => user.email === mail);
     if(user) {
         sessionStorage.setItem('name', user.name);
         sessionStorage.setItem('role', user.role);

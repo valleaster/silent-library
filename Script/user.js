@@ -8,7 +8,17 @@ const usersRole = document.getElementById('role');
 const fields = [usersName, usersEmail, usersRole];
 
 let hasError = false;
-let users = JSON.parse(localStorage.getItem('users')) || [];
+
+// Setting default data
+let users;
+if (localStorage.getItem('users') === null) {
+    const testUsers = [
+        {name: 'yanfei', email: 'feifei@mail.com', password: '12345678', role: 'user'},
+        {name: 'lisa', email: 'lisaminci@silentlibrary.com', password: '12345678', role: 'admin'}
+    ];
+
+    users = localStorage.setItem('users', JSON.stringify(testUsers));
+};
 
 // Form submission behavior
 addBtn.addEventListener('click', e => {
@@ -33,6 +43,7 @@ addBtn.addEventListener('click', e => {
         users.push({ 
             name: username, 
             email: email, 
+            password: '12345678',
             role: role 
         });
         
@@ -79,11 +90,8 @@ function isValidEmail(mail) {
 
 // Show local storage data on page
 function showData() {
-    if(localStorage.getItem('users') == null) {
-        users = [];
-    } else{
-        users = JSON.parse(localStorage.getItem('users'));
-    };
+
+    users = JSON.parse(localStorage.getItem('users'));
 
     let html = '';
 
@@ -104,12 +112,7 @@ document.onload = showData();
 
 // Deleting data 
 function deleteData(index) {
-    if(localStorage.getItem('users') == null) {
-        users = [];
-    } else{
-        users = JSON.parse(localStorage.getItem('users'));
-    };
-
+    users = JSON.parse(localStorage.getItem('users'));
     users.splice(index, 1);
     localStorage.setItem('users', JSON.stringify(users));
     showData();
@@ -121,11 +124,7 @@ function editData(index) {
     addBtn.style.display = 'none';
     updateBtn.style.display = 'block';
 
-    if(localStorage.getItem('users') == null) {
-        users = [];
-    } else{
-        users = JSON.parse(localStorage.getItem('users'));
-    };
+    users = JSON.parse(localStorage.getItem('users'));
 
     // Auto populate form
     usersName.value = users[index].name;
@@ -161,6 +160,7 @@ function clearForm() {
     usersRole.selectedIndex = 0;
 };
 
+// Removing error message
 fields.forEach((field) => {
     field.addEventListener('input', () => {  
         if (field.classList.contains('error')) {
