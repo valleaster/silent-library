@@ -17,13 +17,13 @@ let screenWidth = window.innerWidth;
 // Form submission logic
 form.addEventListener('submit', e => {
     e.preventDefault();
+    hasError = false;
     totalError = 0;
     validateForm();
     if (!hasError) {
         storeData();
         displayPopup(username);
         clearForm();
-        hasError = false;
     } else {
         // Adjusting form margin
         currentMargin = totalError * 9;

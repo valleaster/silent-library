@@ -56,7 +56,7 @@ function validateForm() {
     const passwordValue = password.value;
 
     // Checking for empty fields
-    if(emailValue === '' && passwordValue === '') {
+    if(emailValue === '' || passwordValue === '') {
         showError('Please fill in the form');
         email.classList.add('error');
         password.classList.add('error');
@@ -65,12 +65,10 @@ function validateForm() {
     }
 
     // Checking for user existence
-    if ((!fieldEmpty) && !users.some(user => user.email === emailValue && user.password === passwordValue)) {
+    if ((!fieldEmpty) && !users.some(user => user.email === emailValue)) {
         showError('User does not exist');
-    } else if(users.some(user => user.email === emailValue) && !users.some(user => user.password === passwordValue)) {
-        showError('Email or password incorrect');
-    } else if(!users.some(user => user.email === emailValue) && users.some(user => user.password === passwordValue)) {
-        showError('Email or password incorrect');
+    } else if ((!fieldEmpty) && users.some(user => user.email === emailValue) && !users.some(user => user.password === passwordValue)) {
+        showError('Password incorrect');
     };
 };
 
@@ -87,6 +85,6 @@ function getUserData(mail) {
     if(user) {
         sessionStorage.setItem('name', user.name);
         sessionStorage.setItem('role', user.role);
-    }
-}
+    };
+};
 

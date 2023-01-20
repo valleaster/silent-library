@@ -12,7 +12,7 @@ $(document).ready(function(){
       // for testing purposes
       sessionStorage.setItem('name', 'meow');
       sessionStorage.setItem('role', 'visitor');
-    }
+    };
 
     //Member headers dropdown menu
     function onHeaderLoad() {

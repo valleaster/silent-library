@@ -8,5 +8,5 @@ $(document).ready(function(){
         const message = "Hi, I'm interested to join the upcoming Silent Library Color Run and here are my details: \n \nName: \nContact No.: \nVaccination Status: "
 
        $('#message').val(message)
-    } 
+    }; 
 });

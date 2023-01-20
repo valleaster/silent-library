@@ -91,7 +91,7 @@ main::before {
 /* Form */
 .form-wrapper {
     position: relative;
-    width: 350px;
+    width: 365px;
     background: var(--light-green);
     border-radius: 8px;
     padding: 40px;
@@ -123,7 +123,6 @@ h3 {
     height: 80px;
     display: grid;
     grid-template-rows: 40px 40px;
-    /* align-items: top; */
 }
 
 .sign-in h3 {
@@ -136,7 +135,7 @@ h3 {
     background: rgba(155, 155, 155, 0.15);
     border: 1px solid var(--bright-green);
     border-radius: 2px;
-    padding: 10px 15px;
+    padding: 10px 12px;
     outline: none;
 }
 
