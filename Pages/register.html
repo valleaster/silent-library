@@ -17,17 +17,10 @@
 <body>
     <div id="page">
         <header>
-            <nav>
-                <div class="logo-container">
-                    <a href="home.html"><img src="../Images/Banners&Logo/light-logo.png" alt="logo" class="logo"></a>
-                    <div class="brand-name">
-                        <a href="home.html">Silent <span>Library</span> </a>
-                    </div> 
-                </div>
-            </nav>
+            <div id="header"></div>
         </header>
         <main>
-            <div class="form-wrapper sign-up">
+            <div class="form-wrapper">
                 <form action="#" id="form">
                     <h3>Register</h3>
                     <div class="input-box">
@@ -38,15 +31,27 @@
                         <input type="text" name="email" class="field no-error" id="email" placeholder="Email">
                         <div class="error-message"></div>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box password-field">
                         <input type="password" name="password" class="field no-error" id="password" placeholder="Create Password">
-                        <div class="error-message"></div>
+                        <div class="error-message" id="password-error"></div>
+                        <div id="password-validation">
+                            <div class="spans">
+                                <span class="invalid"></span>
+                                <span class="valid"></span>
+                            </div>
+                            <div id="prompt">
+                                <p>*Enter a password of min 8 characters</p>
+                            </div>
+                            <div id="indicator"></div>
+                        </div>
+                        <button type="button" class="show-password" data-target="password"><i class="fa-solid fa-eye"></i></button>
                     </div>
-                    <div class="input-box">
+                    <div class="input-box password-field">
                         <input type="password" name="password" class="field no-error" id="confirm-password" placeholder="Confirm password">
                         <div class="error-message"></div>
+                        <button type="button" class="show-password" data-target="confirm-password"><i class="fa-solid fa-eye"></i></button>
                     </div>
-                    <button type="submit">SIGN UP</button>
+                    <button type="submit" class="submit">SIGN UP</button>
                 </form>
                 <div class="account">
                     <p>Have an account?</p>
@@ -71,7 +76,13 @@
             </div>
         </div>
     </div>
+
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <!-- Javascript links -->
+    <script src="../Script/commonsignxx.js" type="text/javascript"></script>
+    <script src="../Script/password.js" type="text/javascript"></script>
     <script src="../Script/signup.js" type="text/javascript" ></script>
     <script src="../Script/popup.js" type="text/javascript" ></script>
 

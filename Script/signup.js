@@ -3,16 +3,12 @@ const username = document.getElementById('name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirm-password');
-const fields = [username, email, password, confirmPassword];
 const store = [username, email, password];
 
 const headerMessage = document.getElementById('header-message');
-const signUp = document.querySelector('.sign-up');
 
 let hasError = false;
 let totalError = 0;
-let currentMargin = 0;
-let screenWidth = window.innerWidth;
 
 // Form submission logic
 form.addEventListener('submit', e => {
@@ -24,30 +20,6 @@ form.addEventListener('submit', e => {
         storeData();
         displayPopup(username);
         clearForm();
-    } else {
-        // Adjusting form margin
-        currentMargin = totalError * 9;
-        signUp.style.margin = getMarginValue();
-
-        // Remove error message and readjust margin
-        fields.forEach((field) => {
-            field.addEventListener('input', () => {
-                const errorMessage = field.parentNode.querySelector('.error-message');
-        
-                if(field.classList.contains('error')) {
-                    field.classList.remove('error');
-                    field.classList.add('no-error');
-                    errorMessage.style.display = 'none';
-                    errorMessage.textContent = '';
-
-                    if(totalError > 0) {
-                        totalError--;
-                        currentMargin = currentMargin - 9;
-                        signUp.style.margin = getMarginValue();
-                    };
-                };
-            });
-        });
     };
 });
 
@@ -144,18 +116,40 @@ function userRole(mail) {
     }
 };
 
-// Getting margin value
-function getMarginValue() {
-    if(screenWidth < 1300) {
-        return `calc(12vh - ${currentMargin}px) auto`;
-    } else{
-        return `calc(23vh - ${currentMargin}px) auto`;
-    };
-};
-
 // Clearing form input fields
 function clearForm() {
     fields.forEach((input) => {
         input.value = '';
     });
 };
+
+const fields = [username, email, confirmPassword];
+
+// Removing error message
+fields.forEach((field) => {
+    field.addEventListener('input', () => {
+        const errorMessage = field.parentNode.querySelector('.error-message');
+
+        if(field.classList.contains('error')) {
+            field.classList.remove('error');
+            field.classList.add('no-error');
+            errorMessage.style.display = 'none';
+            errorMessage.textContent = '';
+        };
+    });
+});
+
+// Removing error message for create password
+function removeError() {
+    const errorMessage = password.parentNode.querySelector('.error-message');
+
+    password.classList.remove('error');
+    errorMessage.style.display = 'none';
+    errorMessage.textContent = '';
+};
+
+password.addEventListener('focus', () => {
+    if(password.classList.contains('error')) {
+        removeError();
+    };
+});

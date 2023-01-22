@@ -9,17 +9,13 @@
     <!-- External css links -->
     <link rel="stylesheet" href="../Styles/signin-signup.css">
 
+    <!-- Font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo-container">
-                <a href="home.html"><img src="../Images/Banners&Logo/light-logo.png" alt="logo" class="logo"></a>
-                <div class="brand-name">
-                    <a href="home.html">Silent <span>Library</span> </a>
-                </div> 
-            </div>
-        </nav>
+        <div id="header"></div>
     </header>
     <main>
         <div id="page">
@@ -33,10 +29,11 @@
                     <div>
                         <input type="text" name="email" class="field no-error" id="email" placeholder="Email">
                     </div>
-                    <div>
+                    <div class="password-field">
                         <input type="password" name="password" class="field no-error" id="password" placeholder="Password">
+                        <button type="button" class="show-password" data-target="password"><i class="fa-solid fa-eye"></i></button>
                     </div>
-                    <button type="submit">SIGN IN</button>
+                    <button type="submit" class="submit">SIGN IN</button>
                 </form>
                 <div class="account">
                     <p>Don't have an account?</p>
@@ -46,7 +43,11 @@
         </div>
     </main>
 
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <!-- Javascript links -->
+    <script src="../Script/commonsignxx.js"></script>
     <script src="../Script/signin.js" type="text/javascript"></script>
     
 </body>

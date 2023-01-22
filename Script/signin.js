@@ -13,6 +13,7 @@ if (localStorage.getItem('users') === null) {
     ];
 
     localStorage.setItem('users', JSON.stringify(testUsers));
+    
 } else {
     users = JSON.parse(localStorage.getItem('users'));
 };
@@ -29,16 +30,6 @@ form.addEventListener('submit', e => {
         getUserData(email.value);
         clearForm();
         window.location.href = '../Pages/home.html';
-    } else{
-        // Removing error message
-        fields.forEach((field) => {
-            field.addEventListener('input', () => {
-                if (field.classList.contains('error')) {
-                    field.classList.remove('error');
-                    errorMessage.textContent = '';
-                };
-            });
-        });
     };
 });
 
@@ -47,6 +38,8 @@ function showError(message) {
     hasError = true;
     errorMessage.style.display = 'block';
     errorMessage.textContent = message;
+    email.classList.add('error');
+    password.classList.add('error');
 };
 
 // Form validation
@@ -58,8 +51,6 @@ function validateForm() {
     // Checking for empty fields
     if(emailValue === '' || passwordValue === '') {
         showError('Please fill in the form');
-        email.classList.add('error');
-        password.classList.add('error');
     } else{
         fieldEmpty = false;
     }
@@ -69,6 +60,7 @@ function validateForm() {
         showError('User does not exist');
     } else if ((!fieldEmpty) && users.some(user => user.email === emailValue) && !users.some(user => user.password === passwordValue)) {
         showError('Password incorrect');
+        email.classList.remove('error');
     };
 };
 
@@ -88,3 +80,12 @@ function getUserData(mail) {
     };
 };
 
+// Removing error message
+fields.forEach((field) => {
+    field.addEventListener('input', () => {
+        if (field.classList.contains('error')) {
+            field.classList.remove('error');
+            errorMessage.textContent = '';
+        };
+    });
+});
