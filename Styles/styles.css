@@ -237,8 +237,12 @@ nav ul li a:hover {
     background-color: #326560;
 }
 
-.dropdown li:first-of-type {
+.dropdown li {
     cursor: context-menu;
+}
+
+.dropdown li:not(first-child) {
+    margin-top: 17px;
 }
 
 .dropdown li:hover {
@@ -248,7 +252,7 @@ nav ul li a:hover {
 }
 
 #redirect {
-    margin-top: 15px;
+    cursor: pointer;
 }
 
 #logout {

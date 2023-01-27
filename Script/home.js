@@ -2,8 +2,9 @@
 $(document).ready(function(){
     const userRole = sessionStorage.getItem('role');
     
+    // Load text content and link based on user access
     if(userRole === 'admin' || userRole === 'user') {
-       $('#first-btn').html('Read Now');
+       $('#first-btn').text('Read Now');
        $('#first-btn').click(() => {
          window.location.href = 'books.html';
        });
@@ -14,6 +15,7 @@ $(document).ready(function(){
        });
     };
 
+    // Set button link trigger flag to auto-populate enquiry form
     $('#second-btn').click(() => {
       window.location.href = 'contact.html';
       sessionStorage.setItem('autoPopulate', 'true');
