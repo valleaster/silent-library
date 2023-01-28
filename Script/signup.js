@@ -4,6 +4,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirm-password');
 const store = [username, email, password];
+const inputs = [username, email, password, confirmPassword];
 
 const headerMessage = document.getElementById('header-message');
 
@@ -118,7 +119,7 @@ function userRole(mail) {
 
 // Clearing form input fields
 function clearForm() {
-    fields.forEach((input) => {
+    inputs.forEach((input) => {
         input.value = '';
     });
 };
