@@ -55,10 +55,12 @@ function validateForm() {
         fieldEmpty = false;
     }
 
+    const user = users.find(user => user.email === emailValue);
+
     // Checking for user existence
-    if ((!fieldEmpty) && !users.some(user => user.email === emailValue)) {
+    if (!fieldEmpty && !user) {
         showError('User does not exist');
-    } else if ((!fieldEmpty) && users.some(user => user.email === emailValue) && !users.some(user => user.password === passwordValue)) {
+    } else if (!fieldEmpty && user && user.password !== passwordValue) {
         showError('Password incorrect');
         email.classList.remove('error');
     };
